@@ -12,21 +12,10 @@ class App extends Component {
         edit: true,
         general: { name: "", email: "", phoneNumber: "" },
         educationExp: { schoolName: "", titleOfStudy: "", dateOfStudy: "" },
-        practicalExp: {
-          companyName: "",
-          positionTitle: "",
-          mainTasks: "",
-          date: "",
-        },
-      },
+        practicalExp: {companyName: "", positionTitle: "", mainTasks: "", date: "",}},
       general: { name: "", email: "", phoneNumber: "" },
       educationExp: { schoolName: "", titleOfStudy: "", dateOfStudy: "" },
-      practicalExp: {
-        companyName: "",
-        positionTitle: "",
-        mainTasks: "",
-        date: "",
-      },
+      practicalExp: {companyName: "", positionTitle: "",mainTasks: "", date: "",},
     };
     this.onEditButton = this.onEditButton.bind(this);
     this.onSubmitButton = this.onSubmitButton.bind(this);
@@ -37,9 +26,9 @@ class App extends Component {
   onEditButton(e) {
     this.setState({edit:{
       edit:true,
-      general:this.state.edit.general,
-      educationExp:this.state.edit.educationExp,
-      practicalExp:this.state.edit.practicalExp,
+      general:Object.assign({},this.state.general),
+      educationExp:Object.assign({},this.state.educationExp),
+      practicalExp:Object.assign({},this.state.practicalExp),
     }})
   }
   onSubmitButton(e) {
@@ -70,8 +59,10 @@ class App extends Component {
         edit:true,
         general:this.state.edit.general,
         educationExp:this.state.edit.educationExp,
-        practicalExp:this.state.edit.practicalExp,}};
-        obj[type][key] = value;
+        practicalExp:this.state.edit.practicalExp,
+      },
+};
+      obj.edit[type][key] = value;
         return obj;
     })
   }
@@ -80,20 +71,20 @@ class App extends Component {
     return (
       <div>
         <GeneralInfo
-          edit={this.state.edit.edit}
+          edit={this.state.edit}
           changeHandle={this.changeHandle}
           general={this.state.general}
         />
-        <EducationExp
-          edit={this.state.edit.edit}
+        {/* <EducationExp
+          edit={this.state.edit}
           educationExp={this.state.educationExp}
           changeHandle={this.changeHandle}
         />
         <PracticalExp
-          edit={this.state.edit.edit}
+          edit={this.state.edit}
           practicalExp={this.state.practicalExp}
           changeHandle={this.changeHandle}
-        />
+        /> */}
         <Buttons
           edit={this.state.edit.edit}
           onEditButton={this.onEditButton}

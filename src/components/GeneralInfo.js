@@ -3,11 +3,11 @@ import React, {Component} from 'react';
 class GeneralInfo extends Component{
     render(){
         let {edit,changeHandle,general} = this.props;
-        if(edit){
+        if(edit.edit){
             return <div>
-                <input data-type="general" data-key="name" value={edit.general.name} onChange={changeHandle}></input>
-                <input data-type="general" data-key="email" value={edit.general.name} onChange={changeHandle}></input>
-                <input data-type="general" data-key="phoneNumber" value={edit.general.name} onChange={changeHandle}></input>
+                <input placeholder='name' data-type="general" data-key="name" value={edit.general.name} onChange={changeHandle} type="text"></input>
+                <input placeholder='email' data-type="general" data-key="email" value={edit.general.email} onChange={changeHandle} type="email"></input>
+                <input placeholder='phone number' data-type="general" data-key="phoneNumber" value={edit.general.phoneNumber} onChange={changeHandle} type="tel"></input>
             </div>
         }
         return <div>
