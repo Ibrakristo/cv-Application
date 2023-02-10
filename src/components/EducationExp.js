@@ -11,9 +11,9 @@ class EducationExp extends Component{
             </div>
         }
         return <div>
-            <h3>{educationExp.schoolName}</h3>
-            <h3>{educationExp.titleOfStudy}</h3>
-            <h3>{educationExp.dateOfStudy}</h3>
+            <h3>School Name : {educationExp.schoolName}</h3>
+            <h3>Title of Study : {educationExp.titleOfStudy}</h3>
+            <h3>Date of Study : {educationExp.dateOfStudy}</h3>
         </div>
     }
     }

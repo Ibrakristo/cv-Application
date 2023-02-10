@@ -3,6 +3,7 @@ import GeneralInfo from "./components/GeneralInfo";
 import EducationExp from "./components/EducationExp";
 import PracticalExp from "./components/PracticalExp";
 import Buttons from "./components/Buttons";
+import './styles/App.css'
 class App extends Component {
   constructor() {
     super();
@@ -68,8 +69,31 @@ class App extends Component {
   }
 
   render() {
+    if(this.state.edit.edit){
+      return (<form  className="container" onSubmit={this.onSubmitButton}><GeneralInfo
+        edit={this.state.edit}
+        changeHandle={this.changeHandle}
+        general={this.state.general}
+      />
+      <EducationExp
+        edit={this.state.edit}
+        educationExp={this.state.educationExp}
+        changeHandle={this.changeHandle}
+      />
+      <PracticalExp
+        edit={this.state.edit}
+        practicalExp={this.state.practicalExp}
+        changeHandle={this.changeHandle}
+      />
+      <Buttons
+        edit={this.state.edit.edit}
+        onEditButton={this.onEditButton}
+        onCancelButton={this.onCancelButton}
+        onSubmitButton={this.onSubmitButton}
+      /></form>)
+    }
     return (
-      <div>
+      <div className="container">
         <GeneralInfo
           edit={this.state.edit}
           changeHandle={this.changeHandle}
