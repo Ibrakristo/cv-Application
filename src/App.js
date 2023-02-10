@@ -75,12 +75,12 @@ class App extends Component {
           changeHandle={this.changeHandle}
           general={this.state.general}
         />
-        {/* <EducationExp
+        <EducationExp
           edit={this.state.edit}
           educationExp={this.state.educationExp}
           changeHandle={this.changeHandle}
         />
-        <PracticalExp
+        {/* <PracticalExp
           edit={this.state.edit}
           practicalExp={this.state.practicalExp}
           changeHandle={this.changeHandle}
