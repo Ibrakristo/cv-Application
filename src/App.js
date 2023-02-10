@@ -80,11 +80,11 @@ class App extends Component {
           educationExp={this.state.educationExp}
           changeHandle={this.changeHandle}
         />
-        {/* <PracticalExp
+        <PracticalExp
           edit={this.state.edit}
           practicalExp={this.state.practicalExp}
           changeHandle={this.changeHandle}
-        /> */}
+        />
         <Buttons
           edit={this.state.edit.edit}
           onEditButton={this.onEditButton}
